@@ -27,3 +27,48 @@ body[data-screen="prep"][data-prep-view="equipment"] #prepScreen,body[data-scree
 @media(max-width:850px){.prep-shortcuts button{grid-template-columns:25px 1fr;padding:8px}.equipment-workspace{grid-template-columns:1fr;overflow:auto}.equipment-detail{min-height:230px}.equipment-owned{min-height:240px}.prep-panel{overflow:auto}.materials-list{overflow:visible}}
 @media(max-width:560px){.prep-shortcuts{grid-template-columns:1fr 1fr}.prep-shortcuts button:last-child{grid-column:1/-1}.prep-shortcuts small{font-size:7px}.panel-head h2{font-size:24px}.panel-head p{font-size:9px}.panel-head{align-items:flex-start}.back-home{padding:8px}.prep-panel{padding:18px 14px;gap:14px;min-height:540px}.equipment-workspace{gap:10px}.equipment-owned,.equipment-detail{padding:13px}.equipment-detail{min-height:210px}.material-summary{gap:7px}.material-summary>div{min-width:0;flex:1;padding:12px}.material-summary b{font-size:16px}.enhancement-workspace{flex-direction:column;align-items:stretch;gap:17px;padding:18px}.enhancement-workspace .enhance-mark{width:54px;height:54px;font-size:25px}.materials-list{grid-template-columns:1fr 1fr}}
 
+
+
+/* Readable combat stats, complete shrine status, and responsive character placement */
+.main{overflow-y:auto;scrollbar-gutter:stable}
+.prep-screen{flex:1 0 620px;min-height:620px}
+.prep-status{margin:12px 0;padding:11px 12px;border:1px solid #d7b87535;border-radius:10px;background:#101720a8}
+.prep-status-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;color:#e7d5a9;font-size:10px;letter-spacing:.08em}
+.prep-status-head small{color:#8e9aa2;font-size:8px;letter-spacing:0}
+.prep-status-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.prep-stat{min-width:0;padding:7px 8px;border-radius:7px;background:#0d131b;color:#aab5bb}
+.prep-stat>span{display:block;font-size:9px}
+.prep-stat>b{display:block;margin-top:3px;color:#f0e5ce;font-size:12px;line-height:1.35;overflow-wrap:anywhere}
+.prep-stat>small{display:block;margin-top:2px;color:#8e9aa2;font-size:8px;overflow-wrap:anywhere}
+.prep-stat-bar{display:block;height:4px;margin-top:5px;border-radius:5px;background:#202936;overflow:hidden}
+.prep-stat-bar>i{display:block;width:100%;height:100%;border-radius:5px}
+.prep-stat-bar.hp>i{background:linear-gradient(90deg,#b64b4d,#ef8971)}
+.prep-stat-bar.mp>i{background:linear-gradient(90deg,#528fa5,#8dd2d1)}
+.battle-vitals{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+.fight-stat{min-width:0;min-height:34px;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:5px 9px;border:1px solid #ffffff12;border-radius:7px;background:#11172088}
+.fight-stat span{color:#aeb8bd;font-size:10px}
+.fight-stat b{color:#f2e8d0;font-size:14px;overflow-wrap:anywhere}
+.combat-ui{height:auto;min-height:0;align-items:stretch}
+.commands{height:auto;min-height:0;overflow:visible}
+.log{height:auto;min-height:210px}
+.cmd[data-action="flee"]{min-height:58px}
+@media(max-width:850px){.main{overflow-y:visible}.prep-screen{flex:none;min-height:620px}.combat-ui{height:auto;min-height:0}.commands,.log{height:auto;min-height:0}.commands{overflow:visible}}
+@media(max-width:560px){
+ .main{overflow:visible}
+ .prep-screen{display:flex;flex-direction:column;height:auto;min-height:0;overflow:hidden}
+ .prep-copy{order:1;flex:none;align-self:stretch;padding:18px 14px 4px}
+ .prep-status{margin:10px 0;padding:9px}
+ .prep-status-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+ .prep-stat{padding:6px 7px}
+ .prep-stat>b{font-size:11px}
+ .prep-art{order:2;position:relative;right:auto;bottom:auto;flex:none;width:100%;height:235px;margin-top:8px;opacity:1;pointer-events:none}
+ .prep-art>img{left:50%;bottom:0;height:100%;max-width:100%;transform:translateX(-50%)}
+ .prep-art .art-halo{width:210px;top:50%}
+ .prep-bottom{order:3;margin-top:0;padding:10px 12px;font-size:8px}
+ .battle-vitals{gap:6px}
+ .fight-stat{padding:5px 7px}
+ .combat-ui{grid-template-columns:1fr;min-height:0}
+ .commands{height:auto;min-height:0}
+ .log{height:120px;min-height:120px}
+}
+
